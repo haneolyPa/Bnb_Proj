@@ -11,17 +11,11 @@ BNB 프로젝트
   * #define MQTT_MAX_PACKET_SIZE 2048 으로 변경
   
 Device_Info 항목 사용 가능
-
-예)
-''' {
+```{.cpp}
 void Device_Info() {
-
 	// 측정 내용
-	
 	SET_MEASUREMENT("Bnb_Gas_Sensor");
-	
 	// 학번
-	
 	SET_STUDENT_ID("123456-7890987");
 	// 이름
 	SET_STUDENT_NAME("name");
@@ -32,6 +26,6 @@ void Device_Info() {
 	// 센서 PIN
 	SET_SENSOR_PIN(A0);
 }
-'''
+```
 
-void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 : 추가하지 않으면 빌드 에러 나요.
+void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 - 추가하지 않으면 빌드 에러 나요.
