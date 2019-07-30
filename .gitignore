@@ -5,3 +5,5 @@
 /.vs
 /Bnb_DeviceInfo_Test/Debug
 /Bnb_DeviceInfo_Test/__vm
+/Bnb_ESP8266WiFi_Test/Debug
+/Bnb_ESP8266WiFi_Test/__vm
