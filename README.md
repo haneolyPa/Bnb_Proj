@@ -13,11 +13,15 @@ BNB 프로젝트
 Device_Info 항목 사용 가능
 
 예)
-
+'''
 void Device_Info() {
+
 	// 측정 내용
+	
 	SET_MEASUREMENT("Bnb_Gas_Sensor");
+	
 	// 학번
+	
 	SET_STUDENT_ID("123456-7890987");
 	// 이름
 	SET_STUDENT_NAME("name");
