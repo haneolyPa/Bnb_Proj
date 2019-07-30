@@ -11,7 +11,9 @@ BNB 프로젝트
   * #define MQTT_MAX_PACKET_SIZE 2048 으로 변경
   
 Device_Info 항목 사용 가능
+
 예)
+
 void Device_Info() {
 	// 측정 내용
 	SET_MEASUREMENT("Bnb_Gas_Sensor");
