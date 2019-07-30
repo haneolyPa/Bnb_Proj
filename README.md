@@ -10,7 +10,7 @@ BNB 프로젝트
   * PubSubClient 라이브러리의 PubSubClient.h 파일의 #define MQTT_MAX_PACKET_SIZE 128 -> 
   * #define MQTT_MAX_PACKET_SIZE 2048 으로 변경
   
-- Device_Info 항목 사용 가능
+Device_Info 항목 사용 가능
 예)
 void Device_Info() {
 	// 측정 내용
@@ -27,4 +27,4 @@ void Device_Info() {
 	SET_SENSOR_PIN(A0);
 }
 
-- void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 : 추가하지 않으면 빌드 에러 나요.
+void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 : 추가하지 않으면 빌드 에러 나요.
