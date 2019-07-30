@@ -32,5 +32,6 @@ void Device_Info() {
 	// 센서 PIN
 	SET_SENSOR_PIN(A0);
 }
-}
+'''
+
 void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 : 추가하지 않으면 빌드 에러 나요.
