@@ -18,7 +18,6 @@ void Bnb_Analog_Sensor::_setValue()
 	Serial.print(analogVal);
 	Serial.println();
 	_getJSON().addValue("analogVal", analogVal);
-	_getJSON().addValue("analogVal_str", "test");
 }
 
 
