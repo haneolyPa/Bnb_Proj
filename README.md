@@ -8,7 +8,7 @@ BNB 프로젝트
 
 * 라이브러리 변경사항
   * PubSubClient 라이브러리의 PubSubClient.h 파일의 #define MQTT_MAX_PACKET_SIZE 128 -> 
-  * #define MQTT_MAX_PACKET_SIZE 2048 으로 변경
+  * #define MQTT_MAX_PACKET_SIZE 1024 으로 변경
   
 Device_Info 항목 사용 가능
 ```{.cpp}
@@ -25,6 +25,8 @@ void Device_Info() {
 	SET_SENSOR_TYPE(Gas_Sensor);
 	// 센서 PIN
 	SET_SENSOR_PIN(A0);
+	//센서 ID
+	SET_SENSOR_ID("Bnb_Gas_Sensor_001");
 }
 ```
 
