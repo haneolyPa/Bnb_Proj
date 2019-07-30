@@ -30,6 +30,9 @@
 // 센서 PIN
 #define SET_SENSOR_PIN(sensorPin)	Bnb_DeviceInfo.setSensorPin(sensorPin)
 
+// 센서 ID
+#define SET_SENSOR_ID(sensorID)		Bnb_DeviceInfo.setSensorID(sensorID)
+
 extern void Device_Info();
 
 class Bnb_DeviceInfoClass
@@ -56,6 +59,9 @@ public:
 	void setSensorPin(SENSORPIN sensorPin) { m_sensorPin = sensorPin; }
 	SENSORPIN getSensorPin() { return m_sensorPin; }
 
+	void setSensorID(String sensorID) { m_sersorID = sensorID; }
+	String getSensorID() { return m_sersorID; }
+
 private:
 	String m_measurement;
 	String m_studentID;
@@ -63,6 +69,7 @@ private:
 	String m_deviceName;
 	BNB_Sensor_type m_sensorType;
 	SENSORPIN		m_sensorPin;
+	String m_sersorID;
 };
 
 extern Bnb_DeviceInfoClass Bnb_DeviceInfo;

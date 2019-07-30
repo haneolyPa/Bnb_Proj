@@ -19,9 +19,10 @@ void Device_Info() {
 	SET_DEVICE_NAME("WemosD1R1");
 	// 센서 타입
 	SET_SENSOR_TYPE(Gas_Sensor);
-	// 전송 시간 : 초
-	// 
+	// 센서 PIN
 	SET_SENSOR_PIN(A0);
+	//센서 ID
+	SET_SENSOR_ID("Bnb_Gas_Sensor_001");
 }
 
 void setup() {

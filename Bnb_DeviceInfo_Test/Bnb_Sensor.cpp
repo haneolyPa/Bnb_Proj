@@ -20,7 +20,7 @@ void Bnb_Sensor::init()
 	m_dataJSON.addTag("student_name", getDeviceInfo()->getStudentName());
 	m_dataJSON.addTag("device", getDeviceInfo()->getDeviceName());
 	m_dataJSON.addTag("sensor", this->_getSensorName());
-	//m_dataJSON.addTag("sensor_id", getDeviceInfo());
+	m_dataJSON.addTag("sensor_id", getDeviceInfo()->getSensorID());
 }
 
 void Bnb_Sensor::loop()
