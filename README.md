@@ -13,7 +13,7 @@ BNB 프로젝트
 Device_Info 항목 사용 가능
 
 예)
-'''
+''' {
 void Device_Info() {
 
 	// 측정 내용
@@ -32,5 +32,5 @@ void Device_Info() {
 	// 센서 PIN
 	SET_SENSOR_PIN(A0);
 }
-
+}
 void subscribe(const BNB_ArduinoJSON& Json) 함수 꼭 추가 : 추가하지 않으면 빌드 에러 나요.
