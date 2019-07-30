@@ -25,6 +25,8 @@ void Device_Info() {
 	SET_SENSOR_TYPE(Gas_Sensor);
 	// 센서 PIN
 	SET_SENSOR_PIN(A0);
+	//센서 ID
+	SET_SENSOR_ID("Bnb_Gas_Sensor_001");
 }
 ```
 
