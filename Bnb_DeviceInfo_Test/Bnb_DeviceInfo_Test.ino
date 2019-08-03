@@ -31,9 +31,20 @@ void setup() {
 	Bnb_DeviceInfo.init();
 }
 
+boolean isSoilMoisture_Sensor(const BNB_ArduinoJSON& Json)
+{
+	String sensorName;
+	Json.getTag("sensor", sensorName);
+	return sensorName.equals("SoilMoisture_Sensor");
+}
+
+
 // the subscribe function runs when mqtt subscribe
 void subscribe(const BNB_ArduinoJSON& Json)
 {
+	if (!isSoilMoisture_Sensor(Json))
+		return;
+
 	Serial.print("subscrib Json = ");
 	Json.Test();
 }
@@ -42,6 +53,5 @@ void subscribe(const BNB_ArduinoJSON& Json)
 void loop() {
 	delay(1000);
 	BnbSensor->loop();
+	delay(1000);
 }
-
-

@@ -47,6 +47,11 @@ void BNB_ArduinoJSON::setRoot(String key)
 	m_doc[MEASUREMENT] = key;
 }
 
+String BNB_ArduinoJSON::getRoot()
+{
+	return m_doc[MEASUREMENT];
+}
+
 String BNB_ArduinoJSON::toString() const
 {
 	char buf[1024];

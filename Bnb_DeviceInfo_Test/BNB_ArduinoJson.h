@@ -24,11 +24,19 @@ public:
 	void Format(String format);
 
 	void setRoot(String key);
+	String getRoot();
 	
 	template<typename T>
 	void addTag(String key, T val)
 	{
 		m_doc[TAG][key] = val;
+	}
+
+	template<typename T>
+	void getTag(String key, T val)
+	{
+		T tempVal = m_doc[TAG][key];
+		val = tempVal;
 	}
 
 	template<typename T>

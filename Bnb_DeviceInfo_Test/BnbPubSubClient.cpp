@@ -15,10 +15,10 @@ BnbPubSubClient* BnbPubSubClient::m_pInst = NULL;
 
 WiFiClient _espClient;
 
-//const char* ssid = "BNB";
-//const char* password = "bnbstudy";
-const char* ssid = "U+NetE8D1";
-const char* password = "1C18060730";
+const char* ssid = "BNB";
+const char* password = "bnbstudy";
+//const char* ssid = "U+NetE8D1";
+//const char* password = "1C18060730";
 const char* mqtt_server = "1.212.145.110";
 
 void _setup_wifi() {
