@@ -27,7 +27,6 @@ private:
 	
 private:
 	DHT m_impl;
-	BNB_ArduinoJSON m_dataJSON;
 };
 
 

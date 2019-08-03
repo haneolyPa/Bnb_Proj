@@ -16,6 +16,6 @@ void Bnb_DHT11_Sensor::_setValue()
 	Serial.print(" Temperature = ");
 	Serial.print(t);
 	Serial.println();
-	m_dataJSON.addValue("Humidity", h);
-	m_dataJSON.addValue("Temperature", t);
+	_getJSON().addValue("Humidity", h);
+	_getJSON().addValue("Temperature", t);
 }
