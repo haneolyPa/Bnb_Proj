@@ -5,6 +5,7 @@ BNB 프로젝트
   * PubSubClient 
   * DHT Sensor library
   * SPIFFSIniFile
+  * Adafruit Unified Sensor
 
 * 라이브러리 변경사항
   * PubSubClient 라이브러리의 PubSubClient.h 파일의 #define MQTT_MAX_PACKET_SIZE 128 -> 
