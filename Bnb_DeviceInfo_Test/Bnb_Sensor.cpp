@@ -46,5 +46,4 @@ String Bnb_Sensor::toString() const
 }
 
 
-
-Bnb_Sensor* BnbSensor;
+Bnb_Sensor* BnbSensor = NULL;

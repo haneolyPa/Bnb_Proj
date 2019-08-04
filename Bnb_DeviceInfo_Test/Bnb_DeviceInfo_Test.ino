@@ -4,7 +4,7 @@
  Author:	Bnb Study
 */
 
-#include "Bnb_Null_Sensor.h"
+//#include "Bnb_Null_Sensor.h"
 #include "sensorType.h"
 #include "Bnb_DeviceInfo.h"
 #include "BnbPubSubClient.h"
@@ -21,8 +21,7 @@ void setup() {
 }
 
 // the subscribe function runs when mqtt subscribe
-void subscribe(const BNB_ArduinoJSON& Json)
-{
+void subscribe(const BNB_ArduinoJSON& Json) {
 	if (!BnbSensor->checkSensorType(Json))
 		return;
 
