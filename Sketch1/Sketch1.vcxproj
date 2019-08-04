@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DE192A92-DE03-421B-BDF1-6CBDBA6B8415}</ProjectGuid>
-    <RootNamespace>Bnb_ESP8266WiFi_Test</RootNamespace>
-    <ProjectName>Bnb_ESP8266WiFi_Test</ProjectName>
+    <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
+    <RootNamespace>Sketch1</RootNamespace>
+    <ProjectName>Sketch1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,10 +77,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Bnb_ESP8266WiFi_Test;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\libraries\ESP8266WiFi\src;$(ProjectDir)..\..\..\..\Users\Haneoly\Documents\Arduino\libraries\SPIFFSIniFile\src;$(ProjectDir)..\..\..\..\Users\Haneoly\Documents\Arduino\libraries\ArduinoJson\src;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\libraries\ESP8266WebServer\src;$(ProjectDir)..\..\..\..\Program Files (x86)\Arduino\libraries;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\libraries;$(ProjectDir)..\..\..\..\Users\Haneoly\Documents\Arduino\libraries;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\avr;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\libb64;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\spiffs;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\cores\esp8266\umm_malloc;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\variants\d1;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\tools\sdk\include;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\tools\sdk\lwip2\include;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\tools\sdk\libc\xtensa-lx106-elf\include;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\2.5.0-3-20ed2b9\xtensa-lx106-elf\include\c++\4.8.2;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\2.5.0-3-20ed2b9\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\2.5.0-3-20ed2b9\xtensa-lx106-elf\include;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\2.5.0-3-20ed2b9\lib\gcc\xtensa-lx106-elf\4.8.2\include;$(ProjectDir)..\..\..\..\Users\Haneoly\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.5.2\tools\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ProjectDir)__vm\.Bnb_ESP8266WiFi_Test.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__ESP8266_esp8266__;__ESP8266_ESP8266__;_VMDEBUG=1;__ets__;ICACHE_FLASH;NONOSDK221=1;F_CPU=80000000L;LWIP_OPEN_SRC;TCP_MSS=536;LWIP_FEATURES=1;LWIP_IPV6=0;ARDUINO=10809;ARDUINO_ESP8266_WEMOS_D1R1;ARDUINO_ARCH_ESP8266;FLASHMODE_DIO;ESP8266;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -107,23 +107,20 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Bnb_ESP8266WiFi_Test.ino">
+    <None Include="Sketch1.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NetworkConfig.h" />
-    <ClInclude Include="__vm\.Bnb_ESP8266WiFi_Test.vsarduino.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="NetworkConfig.cpp" />
+    <None Include="src\arduino folders read me.txt">
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties custom_esp8266_d1_wipe="all" custom_esp8266_d1_eesz="4M1M" config.Debug.customdebug_esp8266_d1_debugger_type="universal" />
+      <UserProperties config.Debug.customdebug_esp8266_d1_debugger_type="universal" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

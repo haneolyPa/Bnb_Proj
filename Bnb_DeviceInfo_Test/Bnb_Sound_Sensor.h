@@ -18,6 +18,7 @@ public:
 
 private:
 	virtual String _getSensorName() { return String("Sound_Sensor"); }
+	//virtual void _publish();
 };
 
 

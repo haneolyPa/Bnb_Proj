@@ -17,7 +17,6 @@ public:
 	Bnb_Flame_Sensor(SENSORPIN dhtpin) : Bnb_Digital_Sensor(dhtpin) {}
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName() { return String("Flame_Sensor"); }
 };
 

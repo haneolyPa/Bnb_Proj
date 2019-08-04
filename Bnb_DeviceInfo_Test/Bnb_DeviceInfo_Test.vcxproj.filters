@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Bnb_Net_Dev_Init">
+      <UniqueIdentifier>{37a81e71-0c89-4776-a18a-1f72c10ae38a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Bnb_DeviceInfo_Test.ino" />
@@ -75,6 +78,18 @@
     <ClInclude Include="Bnb_Null_Sensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BNB_NetConfig.h">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClInclude>
+    <ClInclude Include="BNB_Web.h">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClInclude>
+    <ClInclude Include="BNB_Wifi.h">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClInclude>
+    <ClInclude Include="BNB_MQTT.h">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bnb_DeviceInfo.cpp">
@@ -124,6 +139,18 @@
     </ClCompile>
     <ClCompile Include="Bnb_Null_Sensor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BNB_NetConfig.cpp">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClCompile>
+    <ClCompile Include="BNB_Web.cpp">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClCompile>
+    <ClCompile Include="BNB_Wifi.cpp">
+      <Filter>Bnb_Net_Dev_Init</Filter>
+    </ClCompile>
+    <ClCompile Include="BNB_MQTT.cpp">
+      <Filter>Bnb_Net_Dev_Init</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

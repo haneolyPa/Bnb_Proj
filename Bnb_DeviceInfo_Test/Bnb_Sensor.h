@@ -24,10 +24,12 @@ public:
 public:
 	virtual void init();
 	virtual void loop();
+
+public:
 	String toString() const;
 	void setSensorType(BNB_Sensor_type sensorType) { m_sensorType = sensorType; }
 	BNB_Sensor_type getSensorType() const { return m_sensorType; }
-	void setDeviceInfo(Bnb_DeviceInfoClass* deviceInfo) { 
+	void setDeviceInfo(Bnb_DeviceInfoClass* deviceInfo) {
 		m_pDeviceInfo = deviceInfo;
 		init();
 	}
@@ -46,16 +48,23 @@ protected:
 	Bnb_DeviceInfoClass* getDeviceInfo() { return m_pDeviceInfo; }
 
 private:
-	virtual void _setValue() = 0;
 	virtual String _getSensorName() = 0;
+	virtual void _publish() = 0;
+
+private:
 	virtual void _jsonInit();
 	virtual boolean _isNullSensor() { return false; }
+
+private:
+	boolean _isOutputTime();
+	//unsigned long _getpreviousMillisForPublish();
 
 private:
 	SENSORPIN m_inputPin;
 	BNB_ArduinoJSON m_dataJSON;
 	Bnb_DeviceInfoClass* m_pDeviceInfo;
 	BNB_Sensor_type m_sensorType;
+	unsigned long m_previousMillis;
 };
 
 extern Bnb_Sensor* BnbSensor;

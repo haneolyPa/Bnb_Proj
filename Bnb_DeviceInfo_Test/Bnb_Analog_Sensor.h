@@ -21,8 +21,8 @@ public:
 	int analogRead() const { return ::analogRead(_getInputPin()); }
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName() { return String("Analog_Sensor"); }
+	virtual void _publish();
 };
 
 

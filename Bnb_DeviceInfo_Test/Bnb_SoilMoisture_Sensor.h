@@ -18,8 +18,8 @@ public:
 	Bnb_SoilMoisture_Sensor(SENSORPIN dhtpin) : Bnb_Analog_Sensor(dhtpin) {}
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName();
+	virtual void _publish();
 };
 
 #endif

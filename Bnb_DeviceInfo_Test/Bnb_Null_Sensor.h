@@ -18,10 +18,10 @@ public:
 	Bnb_Null_Sensor(SENSORPIN dhtpin) : Bnb_Sensor(dhtpin) {}
 
 private:
-	virtual void _setValue() {}
 	virtual String _getSensorName() { return String("Null_Sensor"); }
 	virtual void _jsonInit() {}
 	virtual boolean _isNullSensor() { return true; }
+	virtual void _publish() {}
 };
 
 

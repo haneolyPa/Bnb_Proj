@@ -17,8 +17,8 @@ public:
 	Bnb_DoorDigital_Sensor(SENSORPIN dhtpin) : Bnb_Digital_Sensor(dhtpin){}
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName() { return String("DoorDigital_Sensor"); }
+	//virtual void _publish();
 };
 
 #endif

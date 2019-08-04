@@ -22,8 +22,8 @@ public:
 	float readTemperature(bool S=false, bool force=false) { return m_impl.readTemperature(S, force); }
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName() { return String("DHT11_Sensor"); }
+	virtual void _publish();
 	
 private:
 	DHT m_impl;

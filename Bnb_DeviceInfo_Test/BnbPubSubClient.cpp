@@ -5,44 +5,38 @@
 #include <ESP8266WiFi.h>
 
 #include "BnbPubSubClient.h"
+#include "Bnb_DeviceInfo.h"
 
 #define _DEBUG
 
 #define PUB_TOPIC	"bnbstudy\/device"
-#define SUB_TOPIC	"bnbstudy\/device"
+#define SUB_TOPIC	"bnbstudy\/command"
 
 BnbPubSubClient* BnbPubSubClient::m_pInst = NULL;
 
 WiFiClient _espClient;
 
-const char* ssid = "BNB";
-const char* password = "bnbstudy";
+//const char* ssid = "BNB";
+//const char* password = "bnbstudy";
 //const char* ssid = "U+NetE8D1";
 //const char* password = "1C18060730";
-const char* mqtt_server = "1.212.145.110";
+//const char* mqtt_server = "1.212.145.110";
 
-void _setup_wifi() {
+const char* GetWiFiSsid()
+{
+	//return ssid;
+	return Bnb_DeviceInfo.getNetConfig().GetSSID().c_str();
+}
 
-	delay(10);
-	// We start by connecting to a WiFi network
-	Serial.println();
-	Serial.print("Connecting to ");
-	Serial.println(ssid);
+const char* GetWiFiPassword()
+{
+	//return password;
+	return Bnb_DeviceInfo.getNetConfig().GetPASSWORD().c_str();
+}
 
-	WiFi.begin(ssid, password);
-
-	while (WiFi.status() != WL_CONNECTED) {
-		delay(500);
-		Serial.print(".");
-	}
-
-	randomSeed(micros());
-
-	Serial.println("");
-	Serial.println("WiFi connected");
-	Serial.println("IP address: ");
-	Serial.println(WiFi.localIP());
-	Serial.println(PUB_TOPIC);
+String GetMqttServer()
+{
+	return Bnb_DeviceInfo.getNetConfig().Get_MQTT_IP();
 }
 
 void internal_callback(char* topic, byte* payload, unsigned int length) 
@@ -83,19 +77,20 @@ void BnbPubSubClient::Init()
 	pinMode(LED_BUILTIN, OUTPUT);
 #endif
 
-	// wifi 立加
-	_setup_wifi();
-
 	// mqtt broker 立加
 	_begin_Mqtt();
 }
 
 void BnbPubSubClient::_begin_Mqtt()
 {
-	//
-	_getImpl()->setServer(mqtt_server, 1883);
-	// callback 殿废
-	_getImpl()->setCallback(internal_callback);
+	IPAddress ipAddress;
+	if (ipAddress.fromString(GetMqttServer()))
+	{
+		//
+		_getImpl()->setServer(ipAddress, 1883);
+		// callback 殿废
+		_getImpl()->setCallback(internal_callback);
+	}
 }
 
 boolean BnbPubSubClient::connected()

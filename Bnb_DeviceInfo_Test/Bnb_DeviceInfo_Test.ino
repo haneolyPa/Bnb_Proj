@@ -10,7 +10,7 @@
 
 void Device_Info() {
 	// 센서 타입
-	SET_SENSOR_TYPE(null_sensor);
+	SET_SENSOR_TYPE(Soil_Moisture_Sensor);
 }
 
 void setup() {
@@ -27,13 +27,12 @@ void subscribe(const BNB_ArduinoJSON& Json) {
 	Serial.print("subscrib Json = ");
 	Json.Test();
 
-	String val
+	String val;
 	Json.getTag("sensor", val);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
 	delay(1000);
-	if (BnbSensor != NULL)
-		BnbSensor->loop();
+	Bnb_DeviceInfo.loop();
 }

@@ -18,6 +18,7 @@ public:
 
 private:
 	virtual String _getSensorName() { return String("Gas_Sensor"); }
+	//virtual void _publish();
 };
 
 #endif

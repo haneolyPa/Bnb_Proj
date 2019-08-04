@@ -21,8 +21,8 @@ public:
 	int digitalRead() const { return ::digitalRead(_getInputPin()); }
 
 private:
-	virtual void _setValue();
 	virtual String _getSensorName() { return String("digital_Sensor"); }
+	virtual void _publish();
 };
 
 

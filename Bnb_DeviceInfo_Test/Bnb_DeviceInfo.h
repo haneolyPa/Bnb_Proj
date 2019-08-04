@@ -11,18 +11,15 @@
 
 #include "sensorType.h"
 #include "Bnb_Sensor.h"
+#include "BNB_NetConfig.h"
+#include "BNB_Web.h"
+#include "BNB_Wifi.h"
 
 // 측정 내용
 #define SET_MEASUREMENT(val)		Bnb_DeviceInfo.setMeasurement(val)
 
-// 학번
-#define SET_STUDENT_ID(id)			Bnb_DeviceInfo.setStudentID(id)
-
 // 이름
 #define SET_STUDENT_NAME(name)		Bnb_DeviceInfo.setStudentName(name)
-
-// 장치명
-#define SET_DEVICE_NAME(devName)	Bnb_DeviceInfo.setDeviceName(devName)
 
 // 센서 타입
 #define SET_SENSOR_TYPE(sensorType)	Bnb_DeviceInfo.setSensorType(sensorType)
@@ -33,25 +30,25 @@
 // 센서 ID
 #define SET_SENSOR_ID(sensorID)		Bnb_DeviceInfo.setSensorID(sensorID)
 
+// publish interval : 초
+#define SET_INTERVAL_SEC(intervalSec)	Bnb_DeviceInfo.setInterval(intervalSec * 1000)
+
 extern void Device_Info();
 
 class Bnb_DeviceInfoClass
 {
  public:
 	void init();
+	void loop();
 
 public:
 	void setMeasurement(String val) { m_measurement = val; }
 	String getMeasurement() { return m_measurement; }
 
-	void setStudentID(String id) { m_studentID = id; }
-	String getStudentID() { return m_studentID; }
-
 	void setStudentName(String name) { m_studentName = name; }
 	String getStudentName() { return m_studentName; }
 
-	void setDeviceName(String devName) { m_deviceName = devName; }
-	String getDeviceName() { return m_deviceName; }
+	String getDeviceName() { return getNetConfig().GetNAME(); }
 
 	void setSensorType(BNB_Sensor_type sensorType) { m_sensorType = sensorType; }
 	BNB_Sensor_type getSensorType() { return m_sensorType; }
@@ -59,17 +56,24 @@ public:
 	void setSensorPin(SENSORPIN sensorPin) { m_sensorPin = sensorPin; }
 	SENSORPIN getSensorPin() { return m_sensorPin; }
 
-	void setSensorID(String sensorID) { m_sersorID = sensorID; }
-	String getSensorID() { return m_sersorID; }
+	void setInterval(long interval) { m_publish_interval = interval; }
+	long getInterval() { return m_publish_interval; }
+
+	BNB_NetConfig& getNetConfig() { return m_netConfig; }
+	void setNetConfig(BNB_NetConfig netConfig) { m_netConfig = netConfig; }
+
+	void NetConfig_StartUp();
 
 private:
 	String m_measurement;
-	String m_studentID;
 	String m_studentName;
-	String m_deviceName;
 	BNB_Sensor_type m_sensorType;
 	SENSORPIN		m_sensorPin;
-	String m_sersorID;
+	long m_publish_interval;
+
+	BNB_NetConfig	m_netConfig;
+	BNB_Web			m_web;
+	BNB_Wifi		m_wifi;
 };
 
 extern Bnb_DeviceInfoClass Bnb_DeviceInfo;
