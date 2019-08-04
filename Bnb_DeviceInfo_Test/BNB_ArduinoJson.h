@@ -33,7 +33,7 @@ public:
 	}
 
 	template<typename T>
-	void getTag(String key, T val)
+	void getTag(String key, T& val)
 	{
 		T tempVal = m_doc[TAG][key];
 		val = tempVal;

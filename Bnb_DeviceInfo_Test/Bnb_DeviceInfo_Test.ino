@@ -26,6 +26,9 @@ void subscribe(const BNB_ArduinoJSON& Json) {
 
 	Serial.print("subscrib Json = ");
 	Json.Test();
+
+	String val
+	Json.getTag("sensor", val);
 }
 
 // the loop function runs over and over again until power down or reset
