@@ -47,7 +47,7 @@ void BNB_ArduinoJSON::setRoot(String key)
 	m_doc[MEASUREMENT] = key;
 }
 
-String BNB_ArduinoJSON::getRoot()
+String BNB_ArduinoJSON::getRoot() const
 {
 	return m_doc[MEASUREMENT];
 }

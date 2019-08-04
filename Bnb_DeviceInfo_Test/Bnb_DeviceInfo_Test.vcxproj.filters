@@ -72,6 +72,9 @@
     <ClInclude Include="Bnb_Sound_Sensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bnb_Null_Sensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bnb_DeviceInfo.cpp">
@@ -117,6 +120,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Bnb_Sound_Sensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bnb_Null_Sensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

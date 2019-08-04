@@ -9,7 +9,7 @@
 #define _DEBUG
 
 #define PUB_TOPIC	"bnbstudy\/device"
-#define SUB_TOPIC	"bnbstudy\/command"
+#define SUB_TOPIC	"bnbstudy\/device"
 
 BnbPubSubClient* BnbPubSubClient::m_pInst = NULL;
 

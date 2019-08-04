@@ -4,7 +4,6 @@
  Author:	Bnb Study
 */
 
-//#include "Bnb_Null_Sensor.h"
 #include "sensorType.h"
 #include "Bnb_DeviceInfo.h"
 #include "BnbPubSubClient.h"
@@ -22,7 +21,7 @@ void setup() {
 
 // the subscribe function runs when mqtt subscribe
 void subscribe(const BNB_ArduinoJSON& Json) {
-	if (!BnbSensor->checkSensorType(Json))
+	if (!(BnbSensor->checkSensorType(Json)))
 		return;
 
 	Serial.print("subscrib Json = ");
@@ -32,8 +31,6 @@ void subscribe(const BNB_ArduinoJSON& Json) {
 // the loop function runs over and over again until power down or reset
 void loop() {
 	delay(1000);
-	if (!BnbSensor)
+	if (BnbSensor != NULL)
 		BnbSensor->loop();
-
-	delay(1000);
 }
