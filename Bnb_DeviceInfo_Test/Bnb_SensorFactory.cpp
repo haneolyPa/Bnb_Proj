@@ -61,8 +61,12 @@ Bnb_Sensor* Bnb_SensorFactory::createSensor(BNB_Sensor_type sensorType, SENSORPI
 		break;
 	case null_sensor:
 	default:
+		m_pSensor = new Bnb_Null_Sensor(sensorPin);
 		break;
 	}
+	if (!m_pSensor)
+		m_pSensor->setSensorType(sensorType);
+
 	return m_pSensor;
 }
 

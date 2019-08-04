@@ -12,5 +12,6 @@
 #include "Bnb_PhotoResistor_Sensor.h"
 #include "Bnb_Gas_Sensor.h"
 #include "Bnb_Sound_Sensor.h"
+#include "Bnb_Null_Sensor.h"
 
 #endif // _BNB_SENSORS_H_

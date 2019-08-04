@@ -24,7 +24,7 @@ public:
 	void Format(String format);
 
 	void setRoot(String key);
-	String getRoot();
+	String getRoot()
 	
 	template<typename T>
 	void addTag(String key, T val)

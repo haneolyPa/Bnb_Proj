@@ -4,25 +4,14 @@
  Author:	Bnb Study
 */
 
+#include "Bnb_Null_Sensor.h"
 #include "sensorType.h"
 #include "Bnb_DeviceInfo.h"
 #include "BnbPubSubClient.h"
 
 void Device_Info() {
-	// 측정 내용
-	SET_MEASUREMENT("Bnb_Gas_Sensor");
-	// 학번
-	SET_STUDENT_ID("123456-7890987");
-	// 이름
-	SET_STUDENT_NAME("name");
-	// 장치명
-	SET_DEVICE_NAME("WemosD1R1");
 	// 센서 타입
-	SET_SENSOR_TYPE(Gas_Sensor);
-	// 센서 PIN
-	SET_SENSOR_PIN(A0);
-	//센서 ID
-	SET_SENSOR_ID("Bnb_Gas_Sensor_001");
+	SET_SENSOR_TYPE(null_sensor);
 }
 
 void setup() {
@@ -31,18 +20,10 @@ void setup() {
 	Bnb_DeviceInfo.init();
 }
 
-boolean isSoilMoisture_Sensor(const BNB_ArduinoJSON& Json)
-{
-	String sensorName;
-	Json.getTag("sensor", sensorName);
-	return sensorName.equals("SoilMoisture_Sensor");
-}
-
-
 // the subscribe function runs when mqtt subscribe
 void subscribe(const BNB_ArduinoJSON& Json)
 {
-	if (!isSoilMoisture_Sensor(Json))
+	if (!BnbSensor->checkSensorType(Json))
 		return;
 
 	Serial.print("subscrib Json = ");
@@ -52,6 +33,8 @@ void subscribe(const BNB_ArduinoJSON& Json)
 // the loop function runs over and over again until power down or reset
 void loop() {
 	delay(1000);
-	BnbSensor->loop();
+	if (!BnbSensor)
+		BnbSensor->loop();
+
 	delay(1000);
 }

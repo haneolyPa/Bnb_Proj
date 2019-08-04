@@ -122,6 +122,7 @@
     <ClInclude Include="Bnb_Flame_Sensor.h" />
     <ClInclude Include="Bnb_Gas_Sensor.h" />
     <ClInclude Include="Bnb_MotionDigital_Sensor.h" />
+    <ClInclude Include="Bnb_Null_Sensor.h" />
     <ClInclude Include="Bnb_PhotoResistor_Sensor.h" />
     <ClInclude Include="Bnb_Sensor.h" />
     <ClInclude Include="Bnb_SensorFactory.h" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Bnb_Flame_Sensor.cpp" />
     <ClCompile Include="Bnb_Gas_Sensor.cpp" />
     <ClCompile Include="Bnb_MotionDigital_Sensor.cpp" />
+    <ClCompile Include="Bnb_Null_Sensor.cpp" />
     <ClCompile Include="Bnb_PhotoResistor_Sensor.cpp" />
     <ClCompile Include="Bnb_Sensor.cpp" />
     <ClCompile Include="Bnb_SensorFactory.cpp" />

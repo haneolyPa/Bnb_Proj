@@ -19,30 +19,43 @@ class Bnb_Sensor
 public:
 	//Bnb_Sensor() {}
 	Bnb_Sensor(SENSORPIN dhtpin);
-	~Bnb_Sensor() {}
+	virtual ~Bnb_Sensor() {}
 
 public:
-	void init();
-	void loop();
+	virtual void init();
+	virtual void loop();
 	String toString() const;
+	void setSensorType(BNB_Sensor_type sensorType) { m_sensorType = sensorType; }
+	BNB_Sensor_type getSensorType() const { return m_sensorType; }
 	void setDeviceInfo(Bnb_DeviceInfoClass* deviceInfo) { 
 		m_pDeviceInfo = deviceInfo;
 		init();
 	}
 
+	boolean checkSensorType(BNB_ArduinoJSON subscribeJson)
+	{
+		String sensorName;
+		subscribeJson.getTag("sensor", sensorName);
+		return sensorName.equals(_getSensorName());
+	}
+
 protected:
 	BNB_ArduinoJSON& _getJSON() { return m_dataJSON; }
+	const BNB_ArduinoJSON& _getConstJSON() const { return m_dataJSON; }
 	uint8_t _getInputPin() const { return m_inputPin; }
 	Bnb_DeviceInfoClass* getDeviceInfo() { return m_pDeviceInfo; }
 
 private:
 	virtual void _setValue() = 0;
 	virtual String _getSensorName() = 0;
+	virtual void _jsonInit();
+	virtual boolean _isNullSensor() { return false; }
 
 private:
 	SENSORPIN m_inputPin;
 	BNB_ArduinoJSON m_dataJSON;
 	Bnb_DeviceInfoClass* m_pDeviceInfo;
+	BNB_Sensor_type m_sensorType;
 };
 
 extern Bnb_Sensor* BnbSensor;

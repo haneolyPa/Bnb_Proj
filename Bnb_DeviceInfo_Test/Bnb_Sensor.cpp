@@ -14,28 +14,35 @@ Bnb_Sensor::Bnb_Sensor(SENSORPIN dhtpin) : m_inputPin(dhtpin)
 void Bnb_Sensor::init()
 {
 	BNBPubSubClient->Init();
+	_jsonInit();
+}
 
-	m_dataJSON.setRoot(getDeviceInfo()->getMeasurement());
-	m_dataJSON.addTag("student_id", getDeviceInfo()->getStudentID());
-	m_dataJSON.addTag("student_name", getDeviceInfo()->getStudentName());
-	m_dataJSON.addTag("device", getDeviceInfo()->getDeviceName());
-	m_dataJSON.addTag("sensor", this->_getSensorName());
-	m_dataJSON.addTag("sensor_id", getDeviceInfo()->getSensorID());
+void Bnb_Sensor::_jsonInit()
+{
+	_getJSON().setRoot(getDeviceInfo()->getMeasurement());
+	_getJSON().addTag("student_id", getDeviceInfo()->getStudentID());
+	_getJSON().addTag("student_name", getDeviceInfo()->getStudentName());
+	_getJSON().addTag("device", getDeviceInfo()->getDeviceName());
+	_getJSON().addTag("sensor", this->_getSensorName());
+	_getJSON().addTag("sensor_id", getDeviceInfo()->getSensorID());
 }
 
 void Bnb_Sensor::loop()
 {
 	delay(2000);		// dev_info ¿¡¼­
 
-	_setValue();
+	if (!_isNullSensor())
+		_setValue();
 
 	BNBPubSubClient->loop();
-	BNBPubSubClient->publish(m_dataJSON.toString().c_str());
+
+	if (!_isNullSensor())
+		BNBPubSubClient->publish(toString());
 }
 
-String Bnb_Sensor::toString()const
+String Bnb_Sensor::toString() const
 {
-	return m_dataJSON.toString();
+	return _getConstJSON().toString();
 }
 
 
